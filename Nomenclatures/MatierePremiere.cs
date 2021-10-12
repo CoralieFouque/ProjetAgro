@@ -12,6 +12,7 @@ namespace Nomenclatures
 
         public TimeSpan? DureeConservation { get; set; }
 
+        public FamilleMatierePremiere Famille { get; set; }
         public TimeSpan? DureeOptimaleUtilisation 
         { 
             get
@@ -21,6 +22,5 @@ namespace Nomenclatures
             }
         }
 
-        public FamilleMatierePremiere Famille { get; set; }
     }
 }
