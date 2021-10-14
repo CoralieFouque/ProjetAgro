@@ -5,6 +5,7 @@ namespace Nomenclatures
     public class FamilleMatierePremiere
     {
         public TimeSpan? DureeOptimaleUtilisation { get; set; }
+        public int Id { get; set; }
 
         public void Accept(IVisitor visitor)
         {
