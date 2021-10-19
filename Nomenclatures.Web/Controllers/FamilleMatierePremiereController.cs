@@ -52,18 +52,20 @@ namespace Nomenclatures.Web
 
         [HttpPost]
         public IActionResult Save(Nomenclatures.Data.FamilleMatierePremiere f)
-        {
-            if (f.Id != 0)
-            {
-                _dbContext.Attach(f).State = EntityState.Modified;
-            }
-            else
-            {
-                _dbContext.FamillesPremieres.Add(f);
-            }
+        {    
+            if(ModelState.IsValid)
+            {    
+                if (f.Id != 0)
+                {
+                    _dbContext.Attach(f).State = EntityState.Modified;
+                }
+                else
+                {
+                    _dbContext.FamillesPremieres.Add(f);
+                }
 
-            _dbContext.SaveChanges();
-
+                _dbContext.SaveChanges();
+            }
             return RedirectToAction(nameof(List));
         }
     }

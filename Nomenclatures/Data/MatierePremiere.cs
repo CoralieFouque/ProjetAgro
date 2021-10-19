@@ -5,6 +5,7 @@ namespace Nomenclatures.Data
 {
     public class MatierePremiere
     {
+
         public MatierePremiere() { }
         
         public MatierePremiere(Nomenclatures.MatierePremiere mp)
@@ -15,6 +16,7 @@ namespace Nomenclatures.Data
             PourcentageHumidite = mp.PourcentageHumidite;
             PoidsUnitaire = mp.PoidsUnitaire;
             DureeConservation = mp.DureeConservation;
+            IsBio = mp.IsBio;
             if(mp.Famille != null)
                 Famille = new FamilleMatierePremiere
                 {
@@ -28,6 +30,7 @@ namespace Nomenclatures.Data
 
         public int Id { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
         public int PourcentageHumidite { get; set; }
@@ -39,5 +42,7 @@ namespace Nomenclatures.Data
         public FamilleMatierePremiere Famille { get; set; }
 
         public int? FamilleId { get; set; }
+
+        public bool IsBio { get; set; }
     }
 }
